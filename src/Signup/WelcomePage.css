@@ -10,16 +10,22 @@
     justify-content: center;
     align-items: center;
 }
-.input__field1{
+.inputs__field{
+    margin-bottom: 30px;
+}
+.input__field{
+    height: 25px;
+    border-top: none;
+    border-left:none ;
+    border-right: none;
+    border-bottom-color: grey;
     width: 350px;
+}
+.input__field::placeholder{
+    color: blue;
+    font-size: 19px;
+    margin-left: 3px;
 
-}
-.input__field2{
-    width: 350px;
-    margin-top: 30px;
-}
-.input__fields{
-   margin-bottom: 20px;
 }
 .login{
     margin-top: 35px;
@@ -27,8 +33,12 @@
 .login__button{
     width: 350px;
 }
+.forgotPassword{
+    margin-top: 23px;
+    margin-bottom: 40px;
+}
 .Border{
-    margin-top: 40px;
+    
     border:1px solid grey;
     width: 100%;
 }
@@ -36,6 +46,9 @@
     margin-top: 30px;
     border: 2px solid grey;
 }
-.account__button{
-    width: 350px;
+.input__errors{
+    color: red;
+    margin-top: 10px;
+    font-size: 20px;
+    
 }
