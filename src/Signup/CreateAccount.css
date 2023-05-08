@@ -1,0 +1,53 @@
+*{
+    margin: 0px;
+}
+.nav{
+    margin-top:10px;
+
+    display:flex;
+    margin-left:10px;
+    align-items:center;
+    margin-bottom: 7px;
+}
+.nav__title{
+    margin-left:15px;
+}
+.main{
+    margin-top:60px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.main__title{
+    margin-top: 15px;
+}
+.main__inputs{
+    margin-top:20px;
+    margin-bottom: 11px;
+}
+.main__input{
+  border-color:black;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+   height: 18px;
+   font-size: 15px;
+  width: 170px;
+}
+.main__input::placeholder{
+    color: blue;
+    font-size: 15px;
+    
+}
+.main__button{
+    margin-top: 10px;
+}
+.main__errors{
+    color:red;
+    margin-left: 15px;
+}
+
+.main__state__title{
+    color: red;
+}
