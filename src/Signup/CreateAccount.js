@@ -1,8 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import './CreateAccount.css'
 import {ArrowBack} from '@mui/icons-material';
-import {yupResolver} from '@hookform/resolvers/yup'
-import {Button,Input} from '@mui/material';
+import {yupResolver} from '@hookform/resolvers/yup';
+import {Button,Input} from '@mui/material'
 import TextField from '@mui/material/TextField';
 import {useForm} from 'react-hook-form'
 import { useNavigate} from 'react-router-dom'
@@ -37,6 +37,10 @@ const CreateAccount = () => {
        
         navigate('/')
     }
+    const NavigatetoProfilePage=()=>{
+        navigate('/profilephoto');
+
+    }
     const userCollection = collection(db,"users");
   const Submit = async()=>{
     try{
@@ -61,7 +65,7 @@ const CreateAccount = () => {
       <div>
         <div className='nav'>
             <div>
-                <ArrowBack/>
+                <ArrowBack onClick={Navigate}/>
             </div>
             <h3 className='nav__title'>Create Account Page</h3>
         </div>
@@ -71,8 +75,11 @@ const CreateAccount = () => {
         
        <div className='main'>
            <div className='main__state'>
-               {show && <h2 className='main__state__title'>Account Created Successfully</h2>}
-
+              {show && <h2 className='main__state__title'>Account Created Successfully</h2>}
+               <div className='success__button'>
+                   {show && <Button variant='contained' color='error' onClick={NavigatetoProfilePage} >Ok</Button>}
+               </div>
+              
              </div>
            <div>
               <h2 className='main__title'>Create Account</h2>

@@ -47,7 +47,16 @@
     color:red;
     margin-left: 15px;
 }
-
+.main__state{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .main__state__title{
     color: red;
+}
+.success__button{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
 }
