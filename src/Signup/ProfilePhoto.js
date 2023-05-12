@@ -12,14 +12,6 @@ const ProfilePhoto = () => {
     const [imageUrl,setImageUrl] = useState('');
     const [listRef,setListRef] = useState('')
     
-    useEffect(()=>{
-        const emailRef = localStorage.getItem('email');
-        console.log(emailRef)
-        const ReadData = async()=>{
-            
-        }
-        ReadData();
-    },[])
     const PictureUpload = async()=>{
         
         try{
