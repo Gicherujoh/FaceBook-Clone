@@ -30,6 +30,17 @@
     margin-bottom: 40px;
 }
 .profile__button{
-    width: 200px;
+    width: 100px;
     
+    
+}
+.profile__content__button{
+    display: flex;
+  margin-right: 30px;
+  margin-left: 200px;
+}
+.profile__contents{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

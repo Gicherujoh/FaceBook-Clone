@@ -55,7 +55,7 @@ const WelcomePage = () => {
    
   return (
     <div className='welcome'>
-        <img className='welcome__image' src='https://st4.depositphotos.com/1316534/41903/i/600/depositphotos_419033018-stock-photo-wroclaw-poland-sep-2020-man.jpg'/>
+        <img className='welcome__image' src='https://st4.depositphotos.com/1316534/41903/i/600/depositphotos_419033018-stock-photo-wroclaw-poan.jpg'/>
         <div className='inputs'>
             <div className='inputs__field'>
               <input placeholder='Email' name='email' className='input__field' {...register('email')} onChange={(e)=>setEmail(e.target.value)}/>
