@@ -1,17 +1,70 @@
 import React,{useState,useEffect} from 'react'
 import './ProfilePhoto.css'
-import {storage} from '../firebase'
+import { useNavigate } from 'react-router-dom'
+import {storage,db} from '../firebase'
 import {uploadBytes,listAll,getDownloadURL,ref} from 'firebase/storage'
 import {Button} from '@mui/material'
 import {ArrowBack,Person} from '@mui/icons-material';
-import {collection,getDocs} from 'firebase/firestore'
+import {collection,getDocs,docs,updateDoc,doc} from 'firebase/firestore'
 import {v4} from 'uuid'
 import firebase from 'firebase/app'
 const ProfilePhoto = () => {
     const [uploadPicture,setUploadPicture]=useState(null);
     const [imageUrl,setImageUrl] = useState('');
     const [listRef,setListRef] = useState('')
-    
+    const [Data,setData] = useState([]);
+    const [emailRef,setEmailRef] = useState('')
+    useEffect(()=>{
+        const email = localStorage.getItem('email')
+          setEmailRef(email)
+    },[])
+    const navigate = useNavigate();
+   const Navigate = ()=>{
+      
+        navigate('/createaccount')
+   }
+    useEffect(()=>{
+        const userRef = collection(db,"users")
+        const ReadData = async()=>{
+            try{
+                const data = await getDocs(userRef);
+                const filteredData = data.docs.map((item)=>({
+                    ...item.data(),
+                    id:item.id
+                }))
+                setData(filteredData);
+                
+            }catch(e){
+                console.error(e)
+            }
+
+        }
+        ReadData();
+    },[])
+    const FindUser = (user)=>{
+        return emailRef === user.Email;
+
+    }
+    const User = Data.find(FindUser);
+    console.log(User)
+      useEffect(()=>{
+          
+          console.log(User)
+           const userRef = doc(db,`users/${User?.id}`);
+           console.log(User?.id)
+          const UpdateData = async()=>{
+            try{
+                await updateDoc(userRef,{
+                    ImageUrl:listRef
+                })
+            }catch(e){
+                console.error(e)
+            }
+
+          }
+          UpdateData();
+      },[])
+
     const PictureUpload = async()=>{
         
         try{
@@ -32,7 +85,6 @@ const ProfilePhoto = () => {
         const imageRef = localStorage.getItem('imageName');
         const userRef = ref(storage,`${imageRef}/`);
         listAll(userRef).then((res)=>{
-            console.log(res)
               res.items.forEach((item)=>{
                   getDownloadURL(item).then((url)=>{
                     setListRef(url);
@@ -43,7 +95,7 @@ const ProfilePhoto = () => {
   return (
     <div>
         <div className='profile__nav'>
-           <ArrowBack/>
+           <ArrowBack onClick={Navigate}/>
            <div className='profile__nav__title'>
             <h3>Profile Picture Page</h3>
             </div>
