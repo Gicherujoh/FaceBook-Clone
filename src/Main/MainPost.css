@@ -1,0 +1,37 @@
+.post__main{
+    display:flex;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.post__image{
+    background-color: grey;
+    border-radius: 50%;
+}
+.post__main__person{
+    display: flex;
+    border-radius: 50%;
+    padding: 8px;
+    background-color: grey;
+}
+.post__main__input{
+    display: flex;
+    border-radius: 100px;
+    width: 300px;
+    height: 17px;
+    padding: 8px;
+}
+.post__main__input::placeholder{
+    font-size: large;
+    color: black;
+}
+.post__main__media{
+    color: green;
+}
+.post__main__person__image{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}

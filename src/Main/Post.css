@@ -1,0 +1,42 @@
+.post__nav{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+}
+.post__icon{
+    display:flex;
+    align-items: center;
+
+}
+.post__arrowback{
+   
+    transform: scale(1.4);
+
+}
+.post__title{
+    margin-left: 15px;
+}
+.post__Main{
+    margin-top: 15px;
+    margin-left: 10px;
+    display: flex;
+     align-items: center;
+}
+.post__Title{
+    margin-left: 10px;
+}
+.post__input{
+    border: none;
+    display: flex;
+    padding: 15px;
+    width: 900px;
+    font-size: large;
+    outline: none;
+    margin-top: 15px;
+      margin-left: 10px;
+}
+.post__input::placeholder{
+    font-size: xx-large;
+   
+}
