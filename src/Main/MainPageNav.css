@@ -1,0 +1,33 @@
+.home__nav{
+    display: flex;
+    margin-top:8px;
+    margin-right: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.home__title{
+    margin-left: 10px;
+    color: blue;
+    font-size: xx-large;
+    width: 350px;
+}
+.home__icons{
+    display: flex;
+    align-items: center;
+}
+.home__icon{
+    margin-left: 12px;
+    display: flex;
+    padding: 3px;
+    background-color: grey;
+    border-radius: 50%;
+}
+.home__nav__icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    margin-left: 10px;
+    margin-right:10px;
+    margin-bottom: 10px;
+}
