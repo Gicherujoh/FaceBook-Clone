@@ -8,19 +8,18 @@ import '@fontsource/roboto/700.css';
 import WelcomePage from './Signup/WelcomePage';
 import CreateAccount from './Signup/CreateAccount';
 import ProfilePhoto from './Signup/ProfilePhoto';
-import MainPage from './Main/MainPage';
 import MainPageNav from './Main/MainPageNav';
 import Post from './Main/Post';
+import SharedNav from './Main/SharedNav';
+import FriendRequest from './Main/FriendRequest';
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<MainPageNav/>}>
-            <Route index element={<MainPage/>}/>
-         
-          </Route>
+          <Route path='/' element={<MainPageNav/>}/>
+            <Route path='friendrequest' element={<FriendRequest/>}/> 
           <Route path='welcomepage' element={<WelcomePage/>}/>
           <Route path='createaccount' element={<CreateAccount/>}/>
           <Route path='profilephoto' element={<ProfilePhoto/>}/>

@@ -1,0 +1,80 @@
+.friends__top{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 15px;
+
+}
+.friends__search{
+    border-radius: 50%;
+    background-color: grey;
+    display: flex;
+    padding: 3px;
+    transform: scale(1.2);
+}
+.friends__buttons{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  
+}
+.friend__button{
+    margin-right: 10px;
+    display: flex;
+    border-radius: 100px;
+    background-color: grey;
+    padding-top: 5px;
+    padding-right: 7px;
+    padding-left: 7px;
+    padding-bottom: 5px;
+    margin-left: 15px;
+}
+.friends__main{
+    margin-top: 15px;
+    margin-left: 13px;
+}
+.friends__title{
+    margin-bottom: 20px;
+}
+.friend__image{
+    margin-right: 15px;
+}
+.friend__img{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+}
+.friend__person{
+    transform: scale(1.5);
+    display: flex;
+    border-radius: 50%;
+    background-color: grey;
+    padding: 30px;
+    margin-right: 25px;
+    margin-top: 20px;
+    margin-left: 2px;
+
+
+
+}
+.friends__people{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.friend__buttons{
+    display: flex;
+    align-items:center;
+    margin-top: 10px;
+}
+.friends__people__desc{
+    display: flex;
+    flex-direction: column;
+}
+.add__friend{
+    margin-right: 10px;
+}
