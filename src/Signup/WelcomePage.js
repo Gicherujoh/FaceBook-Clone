@@ -45,7 +45,7 @@ const WelcomePage = () => {
       data.forEach((item)=>{
         if(item.Email === email && item.ConfirmPassword === password)
         {
-          navigate('createaccount')
+          navigate('/')
         }
 
       })

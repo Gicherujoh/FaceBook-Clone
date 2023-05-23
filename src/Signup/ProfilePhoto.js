@@ -14,7 +14,8 @@ const ProfilePhoto = () => {
     const [listRef,setListRef] = useState('')
     const [Data,setData] = useState([]);
     const [emailRef,setEmailRef] = useState('')
-    useEffect(()=>{
+   
+        useEffect(()=>{
         const email = localStorage.getItem('email')
           setEmailRef(email)
     },[])
@@ -46,12 +47,11 @@ const ProfilePhoto = () => {
 
     }
     const User = Data.find(FindUser);
-    console.log(User)
+   
       useEffect(()=>{
           
-          console.log(User)
            const userRef = doc(db,`users/${User?.id}`);
-           console.log(User?.id)
+        
           const UpdateData = async()=>{
             try{
                 await updateDoc(userRef,{
@@ -73,13 +73,16 @@ const ProfilePhoto = () => {
              
            await uploadBytes(pictureRef,uploadPicture);
            localStorage.setItem('imageName',uploadPicture.name);
+           
 
 
         }catch(e){
             console.error(e);
         }      
     }
-    
+    const NavigatetoHome=()=>{
+        navigate('/')
+      }
    useEffect(()=>{
 
         const imageRef = localStorage.getItem('imageName');
@@ -91,7 +94,9 @@ const ProfilePhoto = () => {
                   })
               })
         })
+        
    },[])
+   
   return (
     <div>
         <div className='profile__nav'>
@@ -105,6 +110,7 @@ const ProfilePhoto = () => {
 
         </div>
         <div className='profile__main'>
+         
             <div >
             <img src={listRef} className='profile__pic'/>
             </div>  

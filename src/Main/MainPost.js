@@ -4,6 +4,7 @@ import './MainPost.css'
 import {useNavigate} from 'react-router-dom'
 import {Person,PermMedia, NavigateNextRounded} from '@mui/icons-material'
 import { db } from '../firebase'
+import UserStories from './UserStories'
 const MainPost = () => {
     const userRef = collection(db,'users');
     const [users,setUsers] = useState([]);
@@ -50,6 +51,9 @@ const MainPost = () => {
             <div>
                 <PermMedia className='post__main__media'/>
             </div>
+        </div>
+        <div>
+            <UserStories/>
         </div>
     </div>
   )

@@ -44,3 +44,14 @@
     justify-content: center;
     align-items: center;
 }
+.profile__main__title{
+    margin-bottom: 20px;
+}
+.main__title{
+    color:red;
+}
+.error__button{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
