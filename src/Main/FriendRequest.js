@@ -7,10 +7,17 @@ import { db } from '../firebase'
 import {collection,getDocs,docs} from 'firebase/firestore'
 const FriendRequest = () => {
   const [data,setData] = useState([])
+  const[email,setEmail] = useState('');
+  const[currentData,setCurrentData] = useState([]);
   const ButtonColor = {
       color:'white',
       backgroundColor:'grey'
   };
+  useEffect(()=>{
+     const data = localStorage.getItem('email');
+        setEmail(data);
+        
+  },[])
   const userRef = collection(db,'users') 
   useEffect(()=>{
     const ReadData = async()=>{
@@ -20,15 +27,25 @@ const FriendRequest = () => {
           ...doc.data(),
           id:doc.id
         }))
-        console.log(filteredData)
+        
         setData(filteredData);
       }catch(e){
         console.error(e)
       }
     }
     ReadData();
+  },[]);
+  const Users = [];
+ 
+ 
+  data.map((items)=>{
+    if(items.Email !== email) 
+    {
+        Users.push(items)
+    }
+  })
+  
 
-  },[])
   return (
     <div>
       <SharedNav/>
@@ -56,14 +73,15 @@ const FriendRequest = () => {
                 <h2>People you may know</h2>
             </div>
             {
-                data.map((item)=>(
+              Users.map((item)=>(
+
                   <div className='friends__people'>
                  <div className='friend__image'>
-                   {item?.ImageUrl? <img  src={item?.ImageUrl} className='friend__img'/> : <Person className='friend__person'/>}
+                   {item?.ImageUrl? <img key={item?.id} src={item?.ImageUrl} className='friend__img'/> : <Person className='friend__person'/>}
                  </div>
                  <div className='friends__people__desc'>
                      <div>
-                        <h3>{item?.FirstName}  {item?.LastName}</h3>
+                        <h3 key={item?.id}>{item?.FirstName}  {item?.LastName}</h3>
                      </div>
                      <div className='friend__buttons'>
                           <div className='add__friend'>
@@ -81,6 +99,8 @@ const FriendRequest = () => {
      </div>
     </div>
   )
+
+ 
 }
 
 export default FriendRequest
