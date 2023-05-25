@@ -15,8 +15,9 @@ const schema = yup.object().shape({
 const WelcomePage = () => {
   const [data,setData] =useState([]);
   const[password,setPassword]=useState('');
+  
   const[email,setEmail]= useState('');
-    const navigate = useNavigate();
+   const navigate = useNavigate();
      const Navigate = ()=>{
           navigate('/createaccount');
      }
@@ -41,10 +42,13 @@ const WelcomePage = () => {
         ReadData();
 
       },[])
+      
+
     const Submit = async()=>{
       data.forEach((item)=>{
         if(item.Email === email && item.ConfirmPassword === password)
         {
+            localStorage.setItem('email',email)
           navigate('/')
         }
 

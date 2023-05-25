@@ -55,7 +55,7 @@ const CreateAccount = () => {
 
         });
         setShow(true);
-        localStorage.setItem('email',email);
+       
 
     }catch(e){
         console.error(e);
